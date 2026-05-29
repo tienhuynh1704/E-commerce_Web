@@ -1,0 +1,60 @@
+<html lang="vi">
+{{header}}
+<link rel="stylesheet" href="/public/css/product.css">
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero-section" style="position: relative; min-height: 340px; display: flex; align-items: center; justify-content: center;">
+        <div class="container" style="text-align: center; position: relative; z-index:2;">
+            <h1 class="hero-title" style="color: #fff; font-size: 3.5rem; font-weight: 700; text-shadow: 0 4px 24px rgba(0,0,0,0.25);">SBOYS Store</h1>
+            <div class="hero-buttons" style="margin-top: 32px;">
+                <a href="#products" class="btn-apple">Xem sản phẩm</a>
+                <a href="#features" class="btn-apple-outline">Tìm hiểu thêm</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Grid + Sidebar Danh mục -->
+    <div style="display: flex; align-items: flex-start; margin-top: 32px;">
+        <!-- Sidebar Danh mục -->
+        <aside id="danhmuc" style="width: 220px;  padding: 20px; border-radius: 8px; margin-right: 20px; min-height: 400px;">
+            <h3 style="margin-top: 0;">Danh mục</h3>
+            <ul id="danhmuc-list" class="list-group" style="list-style: none; padding: 0; background: transparent; border: none;">
+                <li>Đang tải...</li>
+            </ul>
+        </aside>
+        <!-- Product Grid -->
+        <section class="product-grid" id="products" style="flex: 1;">
+            <div class="container">
+                <div class="d-flex justify-content-end align-items-center mb-4 position-relative" style="z-index: 20;">
+                    <div id="search-box" class="search-box">
+                        <form id="search-form" class="search-form-collapsed">
+                            <input class="form-control" type="search" placeholder="Search..." aria-label="Search" id="search-input">
+                            <button class="btn" type="submit"><i class="fas fa-search"></i></button>
+                        </form>
+                    </div>
+                </div>
+                <div id="loading-state" class="loading">
+                    <div class="spinner"></div>
+                    <p>Đang tải sản phẩm...</p>
+                </div>
+                <div id="error-state" class="error-message" style="display: none;">
+                    <h3>Không thể tải sản phẩm</h3>
+                    <p>Vui lòng thử lại sau hoặc kiểm tra kết nối mạng.</p>
+                    <button class="btn-apple" onclick="productApp.loadAllProducts()">Thử lại</button>
+                </div>
+                <div id="products-container" class="row" style="display: none;">
+                    <!-- Products will be dynamically loaded here -->
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Feature Section -->
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../public/js/product.js"></script>
+    
+</body>
+{{footer}}
+</html>
